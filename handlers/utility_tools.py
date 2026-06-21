@@ -3,7 +3,6 @@
 """
 
 import qrcode
-from pyzbar.pyzbar import decode
 from PIL import Image
 import zipfile
 import os
@@ -19,11 +18,8 @@ def generate_qr(text, output_path):
 
 
 def scan_qr(input_path):
-    """QR code se text/data nikalta hai. List of decoded strings return karta hai"""
-    img = Image.open(input_path)
-    decoded_objects = decode(img)
-    results = [obj.data.decode("utf-8") for obj in decoded_objects]
-    return results
+    """QR Scan feature abhi temporarily unavailable hai (zbar library issue)"""
+    raise Exception("QR Scanner abhi temporarily unavailable hai. Jald hi add karenge!")
 
 
 def create_zip(file_paths, output_path):
